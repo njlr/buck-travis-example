@@ -22,7 +22,11 @@ branches:
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
+      - gcc-5
+      - g++-5
       - build-essential
       - default-jdk
       - ant
@@ -30,7 +34,6 @@ addons:
       - git
       - ruby
       - zip
-      - clang
 
 cache:
   bundler: true
