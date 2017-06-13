@@ -3,9 +3,15 @@ dist: trusty
 language: generic
 
 before_install:
+    # Update apt-get
     - sudo apt-get -qq update
+    # Install Buck's dependencies
     - sudo apt-get install -y default-jdk ant python git ruby zip
+    # Install Linuxbrew
     - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+    - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+    - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+    # Install Buck
     - brew tap facebook/fb
     - brew install buck
 
