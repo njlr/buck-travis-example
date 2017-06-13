@@ -27,8 +27,6 @@ before_install:
   - brew install gcc
   # Experiments
   - pwd
-  - ls -a /home/travis/.cache/Homebrew/
-  - ls -a /home/linuxbrew/.linuxbrew
   - ls -a $HOME/.cache/Homebrew/
   - ls -a $HOME/.linuxbrew/
 
