@@ -5,9 +5,8 @@ language: generic
 before_install:
   # Install Linuxbrew
   - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
   - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
-  - echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >>~/.bash_profile
-  - echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >>~/.bash_profile
   - brew --version
   # Install Buck
   - brew tap facebook/fb
