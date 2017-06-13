@@ -4,9 +4,9 @@ language: generic
 
 before_install:
   # Install Linuxbrew
-  - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-  - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+  - HOMEBREW_PREFIX=$HOME/.linuxbrew/ && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  - PATH="$HOME/.linuxbrew/bin:$PATH"
+  - echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >>~/.bash_profile
   - brew --version
   # Install Buck
   - brew tap facebook/fb
@@ -17,6 +17,8 @@ before_install:
   # Experiments
   - pwd
   - ls -a /home/linuxbrew
+  - ls -a ~/
+  - ls -a ~/.linuxbrew
 
 script:
   - buck build :hello
