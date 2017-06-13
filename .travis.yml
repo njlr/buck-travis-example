@@ -6,7 +6,7 @@ before_install:
     # Update apt-get
     - sudo apt-get -qq update
     # Install Buck's dependencies
-    - sudo apt-get install -y default-jdk ant python git ruby zip
+    - sudo apt-get install -y build-essential default-jdk ant python git ruby zip
     # Install Linuxbrew
     - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
     - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
