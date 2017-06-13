@@ -17,9 +17,8 @@ before_install:
   # Experiments
   - pwd
   - ls -a /home/travis/.cache/Homebrew/
-  - ls -a /home/linuxbrew
-  - ls -a ~/
-  - ls -a ~/.linuxbrew
+  - ls -a /home/linuxbrew/.linuxbrew
+  - ls -a $HOME/.cache/Homebrew/
 
 script:
   - buck build :hello
@@ -30,4 +29,4 @@ branches:
 
 cache:
   directories:
-    - /home/linuxbrew/
+    - /home/travis/.cache/Homebrew/
