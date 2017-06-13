@@ -3,39 +3,25 @@ dist: trusty
 language: generic
 
 before_install:
-    # Install Linuxbrew
-    - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-    - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-    - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
-    - brew --version
-    # Install Buck
-    - brew tap facebook/fb
-    - brew install buck
-    - buck --version
+  # Install Linuxbrew
+  - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+  - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+  - brew --version
+  # Install Buck
+  - brew tap facebook/fb
+  - brew install buck
+  - buck --version
+  # Install GCC
+  - brew install gcc
 
 script:
-    - buck build :hello
+  - buck build :hello
 
 branches:
   except:
     - gh-pages
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-5
-      - g++-5
-      - build-essential
-      - default-jdk
-      - ant
-      - python
-      - git
-      - ruby
-      - zip
-
 cache:
-  bundler: true
   directories:
     - /home/linuxbrew/
