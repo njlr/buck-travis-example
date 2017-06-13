@@ -8,7 +8,8 @@ before_install:
   # - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
   # - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
   # - brew --version
-  - git clone https://github.com/Linuxbrew/brew.git $HOME/.linuxbrew
+  - if [ ! -d $HOME/.linuxbrew ]; then git clone https://github.com/Linuxbrew/brew.git $HOME/.linuxbrew fi
+  # - git clone https://github.com/Linuxbrew/brew.git $HOME/.linuxbrew
   - PATH="$HOME/.linuxbrew/bin:$PATH"
   - echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >>~/.bash_profile
   - export MANPATH="$(brew --prefix)/share/man:$MANPATH"
@@ -25,10 +26,6 @@ before_install:
   - buck --version
   # Install GCC
   - brew install gcc
-  # Experiments
-  - pwd
-  - ls -a $HOME/.cache/Homebrew/
-  - ls -a $HOME/.linuxbrew/
 
 script:
   - buck build :hello
@@ -39,4 +36,4 @@ branches:
 
 cache:
   directories:
-    - /home/travis/.cache/Homebrew/
+    - $HOME/.linuxbrew/
