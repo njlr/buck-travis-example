@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: generic
+
+before_install:
+    - sudo apt-get update
+    - sudo apt-get install default-jdk ant python2 git ruby
+    - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+    - brew tap facebook/fb
+    - brew install buck
+
+script:
+    - buck build :hello
+
+branches:
+  except:
+    - gh-pages
