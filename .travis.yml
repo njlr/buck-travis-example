@@ -29,4 +29,4 @@ addons:
       - git
       - ruby
       - zip
-      - g++
+      - clang
