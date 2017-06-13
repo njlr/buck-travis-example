@@ -4,7 +4,7 @@ language: generic
 
 before_install:
     - sudo apt-get -qq update
-    - sudo apt-get install -y default-jdk ant python2 git ruby
+    - sudo apt-get install -y default-jdk ant python git ruby zip
     - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
     - brew tap facebook/fb
     - brew install buck
