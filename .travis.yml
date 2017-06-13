@@ -7,6 +7,7 @@ before_install:
     - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
     - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
     - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+    - brew --version
     # Install Buck
     - brew tap facebook/fb
     - brew install buck
@@ -30,3 +31,8 @@ addons:
       - ruby
       - zip
       - clang
+
+cache:
+  bundler: true
+  directories:
+    - /home/linuxbrew/

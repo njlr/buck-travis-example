@@ -1,3 +1,0 @@
-[cxx]
-  cc = /usr/bin/clang
-  cxx = /usr/bin/clang++
