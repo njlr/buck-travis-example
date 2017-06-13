@@ -4,23 +4,11 @@ language: generic
 
 before_install:
   # Install Linuxbrew
-  # - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  # - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-  # - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
-  # - brew --version
   - test -d $HOME/.linuxbrew || git clone https://github.com/Linuxbrew/brew.git $HOME/.linuxbrew
-  # - git clone https://github.com/Linuxbrew/brew.git $HOME/.linuxbrew
-  - ls -a $HOME/.linuxbrew
-  - ls -a $HOME/.linuxbrew/bin
   - PATH="$HOME/.linuxbrew/bin:$PATH"
   - echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >>~/.bash_profile
   - export MANPATH="$(brew --prefix)/share/man:$MANPATH"
   - export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
-  # - export LINUXBREWHOME=$HOME/.linuxbrew
-  # - export PATH=$LINUXBREWHOME/bin:$PATH
-  # - export MANPATH=$LINUXBREWHOME/man:$MANPATH
-  # - export PKG_CONFIG_PATH=$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH
-  # - export LD_LIBRARY_PATH=$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH
   - brew --version
   # Install Buck
   - brew tap facebook/fb
