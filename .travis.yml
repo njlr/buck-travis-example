@@ -14,6 +14,10 @@ before_install:
   - buck --version
   # Install GCC
   - brew install gcc
+  # Experiments
+  - pwd
+  - ls /home/linuxbrew
+  - ls $HOME/.linuxbrew
 
 script:
   - buck build :hello
