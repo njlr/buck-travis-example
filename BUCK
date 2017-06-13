@@ -3,4 +3,7 @@ cxx_binary(
   srcs = [
     'main.cpp',
   ],
+  compiler_flags = [
+    '-v',
+  ],
 )
